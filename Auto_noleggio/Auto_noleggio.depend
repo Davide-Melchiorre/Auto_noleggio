@@ -1,6 +1,9 @@
 # depslib dependency file v1.0
-1674326828 source:c:\users\davide\desktop\scuola 2022-2023\tpsit\github\auto_noleggio\auto_noleggio\main.cpp
+1674602225 source:c:\users\davide\desktop\scuola 2022-2023\tpsit\github\auto_noleggio\auto_noleggio\main.cpp
 	<iostream>
 	<fstream>
 	<ctime>
+	<cstring>
+	<string.h>
+	<stdio.h>
 
