@@ -55,7 +55,7 @@ void prenotazione(macchina concessionario[],macchina appoggio[], int &i)
     string categoria,cat1; char ch[70];
     int cont=0,a=1,num[50],p=0,c2=0, n,contatore=0,n2=0,n3=0;
     cin.ignore();
-    cout<<endl<<"Inserire la categoria di macchina da prenotare: ";
+    cout<<endl<<"Inserire la categoria e i giorni della macchina da prenotare: ";
     getline(cin,categoria);
     for(int i=0; i<categoria.length(); i++)
     {
@@ -101,6 +101,7 @@ void prenotazione(macchina concessionario[],macchina appoggio[], int &i)
             c2++;
         }
     }
+    cout<<endl<<"Le macchine disponibili sono: "<<endl<<endl;
     while(cont<i)
     {
 
@@ -157,11 +158,8 @@ void prenotazione(macchina concessionario[],macchina appoggio[], int &i)
         }
         cont++;
     }
-
-
-
     cont=0;
-    cout<<"Inserisci il numero della macchina da prenotare: ";
+    cout<<endl<<"Inserisci il numero della macchina da prenotare: ";
     cin>>n3;
     while(cont<a-1)
     {
@@ -171,118 +169,55 @@ void prenotazione(macchina concessionario[],macchina appoggio[], int &i)
                 {
                     n2=num[i];
                     if(appoggio[cont].lun=="L" && n2==1)
-                        appoggio[cont].lun=="A";
+                        appoggio[cont].lun="A";
 
                     if(appoggio[cont].mar=="L" && n2==2)
-                        appoggio[cont].mar=="A";
+                        appoggio[cont].mar="A";
 
                     if(appoggio[cont].mer=="L" && n2==3)
-                        appoggio[cont].mer=="A" ;
+                        appoggio[cont].mer="A" ;
 
                     if(appoggio[cont].gio=="L" && n2==4)
-                        appoggio[cont].gio=="A";
+                        appoggio[cont].gio="A";
 
                     if(appoggio[cont].ven=="L" && n2==5)
-                        appoggio[cont].ven=="A";
+                        appoggio[cont].ven="A";
 
                     if(appoggio[cont].sab=="L" && n2==6)
-                        appoggio[cont].sab=="A";
+                        appoggio[cont].sab="A";
 
                     if(appoggio[cont].dom=="L" && n2==7)
-                        appoggio[cont].dom=="A";
+                        appoggio[cont].dom="A";
                 n2=0;
             }
         }
         cont++;
 
     }
-
-
-        /*
-    cout<<endl;
-    while(categoria[n]!='0')
-    {
-
-
-
-    }
-    cout<<"Inserisci il numero della macchina da prenotare: ";
-    cin>>num;
-    cout<<endl;
-    while(cont<a-1)
-    {
-        if(num==appoggio[cont].num)
-        {
-            do{
-                cout<<"I giorni liberi della macchina sono:"<<endl;
-                if(appoggio[cont].lun=="L")
-                    cout<<"1. Lunedi"<<endl;
-                if(appoggio[cont].mar=="L")
-                    cout<<"2. Martedi"<<endl;
-                if(appoggio[cont].mer=="L")
-                    cout<<"3. Mercoledi"<<endl;
-                if(appoggio[cont].gio=="L")
-                    cout<<"4. Giovedi"<<endl;
-                if(appoggio[cont].ven=="L")
-                    cout<<"5. Venerdi"<<endl;
-                if(appoggio[cont].sab=="L")
-                    cout<<"6. Sabato"<<endl;
-                if(appoggio[cont].dom=="L")
-                    cout<<"7. Domenica"<<endl;
-
-                cout<<endl<<"Inserire il numero del giorno da prenotare: ";
-                cin>>p;
-                if(appoggio[cont].lun=="L" && p==1)
-                    appoggio[cont].lun="A";
-
-                if(appoggio[cont].mar=="L" && p==2)
-                    appoggio[cont].mar="A";
-
-                if(appoggio[cont].mer=="L" && p==3)
-                    appoggio[cont].mer="A";
-
-                if(appoggio[cont].gio=="L" && p==4)
-                    appoggio[cont].gio="A";
-
-                if(appoggio[cont].ven=="L" && p==5)
-                    appoggio[cont].ven="A";
-
-                if(appoggio[cont].sab=="L" && p==6)
-                    appoggio[cont].sab="A";
-
-                if(appoggio[cont].dom=="L" && p==7)
-                    appoggio[cont].dom="A";
-
-                cout<<endl<<"Vuoi prenotare la macchina per un altro giorno? [si/no]"<<endl;
-                cin>>sce;
-                cout<<endl;
-            }while(sce=="si" || sce=="Si");
-        }
-            cont++;
-    }
-*/
     cont=0; c2=0;
     while(cont<i && c2<=a-1)
     {
-        if(cat1==concessionario[cont].categoria)
-        {
-            cout<<"sono entrato nel if"<<endl;
-            concessionario[cont].categoria=appoggio[c2].categoria;
-            concessionario[cont].marca=appoggio[c2].marca;
-            concessionario[cont].modello=appoggio[c2].modello;
-            concessionario[cont].colore=appoggio[c2].colore;
-            concessionario[cont].lun=appoggio[c2].lun;
-            concessionario[cont].mar=appoggio[c2].mar;
-            concessionario[cont].mer=appoggio[c2].mer;
-            concessionario[cont].gio=appoggio[c2].gio;
-            concessionario[cont].ven=appoggio[c2].ven;
-            concessionario[cont].sab=appoggio[c2].sab;
-            concessionario[cont].dom=appoggio[c2].dom;
-            c2++;
+        if(concessionario[cont].categoria==appoggio[c2].categoria)
+            if(concessionario[cont].marca==appoggio[c2].marca)
+                if(concessionario[cont].modello==appoggio[c2].modello)
+                    if(concessionario[cont].colore==appoggio[c2].colore)
+                        {
+                            concessionario[cont].categoria=appoggio[c2].categoria;
+                            concessionario[cont].marca=appoggio[c2].marca;
+                            concessionario[cont].modello=appoggio[c2].modello;
+                            concessionario[cont].colore=appoggio[c2].colore;
+                            concessionario[cont].lun=appoggio[c2].lun;
+                            concessionario[cont].mar=appoggio[c2].mar;
+                            concessionario[cont].mer=appoggio[c2].mer;
+                            concessionario[cont].gio=appoggio[c2].gio;
+                            concessionario[cont].ven=appoggio[c2].ven;
+                            concessionario[cont].sab=appoggio[c2].sab;
+                            concessionario[cont].dom=appoggio[c2].dom;
+                            c2++;
+
+                        }
+            cont++;
         }
-        cont++;
-    }
-    cout<<"Prenotazione avvenuta con successo!"<<endl;
 }
 
 
